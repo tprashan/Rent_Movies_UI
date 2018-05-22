@@ -4,6 +4,7 @@ import '../styles/tab.scss';
 import Comments from "./Comments";
 import Dashboard from "./dashboard/Dashboard";
 import { fetchKviStatusCard } from '../fetchers';
+import Visuals from "./Visuals";
 
 export default class TabComponent extends Component {
 
@@ -15,10 +16,10 @@ export default class TabComponent extends Component {
     componentWillMount() {
         fetchKviStatusCard().then(data => {
             this.setState({movies: data});
-            let trends = data.filter((movie) => {
+            let trending = data.filter((movie) => {
                 return movie.trending;
             });
-            this.setState({trending: trends});
+            this.setState({trending: trending});
         })
     }
 
@@ -34,10 +35,12 @@ export default class TabComponent extends Component {
                             <Tab className="tabpane"> All({allMoviesCount})</Tab>
                             <Tab className="tabpane"> Trending({trendingMoviesCount})</Tab>
                             <Tab className="tabpane"> Comments</Tab>
+                            <Tab className="tabpane"> Visuals</Tab>
                         </TabList>
                         <TabPanel><Dashboard movies={this.state.movies}/></TabPanel>
                         <TabPanel><Dashboard movies={this.state.trending}/></TabPanel>
                         <TabPanel><Comments/></TabPanel>
+                        <TabPanel><Visuals movies={this.state.movies}/></TabPanel>
                     </Tabs>
                 </If>
             </div>
