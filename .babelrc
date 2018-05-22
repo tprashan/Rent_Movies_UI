@@ -1,0 +1,35 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["last 2 versions", "ie 11", "ff 45"]
+      },
+      "modules": false,
+      "useBuiltIns": true
+    }],
+    "react"
+  ],
+  "plugins": [
+    "transform-decorators-legacy",
+    "transform-react-jsx",
+    "jsx-control-statements",
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    "jsx-control-statements",
+    "lodash",
+    "syntax-dynamic-import"
+  ],
+  "env": {
+    "development": {
+      "plugins": ["react-hot-loader/babel"]
+    },
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs", "dynamic-import-node"]
+    },
+    "production": {
+      "plugins": [
+        "transform-react-remove-prop-types"
+      ]
+    }
+  }
+}

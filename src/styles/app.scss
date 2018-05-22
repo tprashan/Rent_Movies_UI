@@ -1,0 +1,68 @@
+.header {
+  height: 400px;
+  background: url("../assets/movierental.jpg");
+
+  &-text {
+    color: orangered;
+    text-align: center;
+    line-height: 300px;
+    animation: blinker 3s linear infinite;
+  }
+
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+.m-rental-container {
+  min-height: 400px;
+  margin-left: 43px;
+  margin-right: 43px;
+  margin-top: 15px;
+  background-color: black;
+  color: #f0f0f0;
+}
+
+.comment-box {
+  min-height: 100px;
+  margin: 15px 10px 10px 10px;
+  border-radius: 5px;
+  border: 1px solid lightgoldenrodyellow;
+  display: inline-flex;
+}
+
+.m-dropdown {
+  position: relative;
+  display: inline-flex;
+  margin-top: -35px;
+  float: right;
+}
+
+.dropdown {
+  width: 150px;
+  margin-top: -8px;
+  margin-right: 43px;
+}
+
+.radio-buttons {
+  margin-top: -20px;
+  margin-right: 5px;
+}
+
+.table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 900px;
+}
+
+.td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.tr:nth-child(even) {
+  background-color: #dddddd;
+}

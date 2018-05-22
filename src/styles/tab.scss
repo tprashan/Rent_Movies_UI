@@ -1,0 +1,28 @@
+.tablist {
+  display: inline-flex;
+  margin-bottom: -15px;
+  list-style: none;
+}
+
+.tabpane {
+  height: 50px;
+  line-height: 50px;
+  width: 150px;
+  margin-left: 3px;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid gray;
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+.react-tabs__tab--selected {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+}
+
+.radio-button {
+
+}

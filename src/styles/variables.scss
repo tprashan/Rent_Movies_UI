@@ -1,0 +1,185 @@
+// use http://chir.ag/projects/name-that-color/ to add color names
+
+$metro-blue: #002b72; // METRO Blue
+$metro-new-blue: #002d72; // METRO Blue
+$metro-yellow: rgb(251, 228, 0); // METRO Yellow
+$success-green: rgb(116, 186, 0); // Success Green
+$algae-green: #85d9b4;
+$aqua-spring: #ebf9f3;
+$shamrock: #34c082;
+$eucalyptus: #2a9a68;
+$sky-blue: #63a0ff; // Sky Blue
+$discount-red: rgb(204, 51, 0); // Discount Red
+$light-red: #fcebe8; // light Red
+$error-red: #de351b; // error Red
+$warning-orange: rgb(229, 93, 73); // Warning Orange
+$logo-blue-bg: rgb(210, 218, 234); // Logo Blue BG
+$sky-blue-bg: rgb(204, 235, 255); // Sky Blue BG
+$sky-blue-bg-new: #e6efff; // Sky Blue BG
+$success-green-bg: rgb(227, 241, 204); // Success Green BG
+$warning-orange-bg: rgb(255, 235, 204); // Warning Orange BG
+$logo-yellow-light: rgb(254, 249, 204); // Logo Yellow light
+$mother-of-all-bg: #f2f7fe; // Mother of all BG
+$metro-blue-reduced: #6681aa; // METRO Blue reduced
+$sky-blue-reduced: rgb(102, 194, 255); // Sky Blue reduced
+$success-green-reduced: rgb(172, 214, 102); // Success Green reduced
+$warning-orange-reduced: rgb(248, 158, 93); // Warning orange reduced
+$background-gray: #f2f3f5; // Background Gray
+$light-gray: rgb(238, 238, 238); // Light Gray
+$outline-gray: rgb(204, 204, 204); // Outline Gray
+$medium-gray: rgb(153, 153, 153); // Medium Gray
+$just-gray: rgb(102, 102, 102); // Just Gray
+$boulder: rgb(117, 117, 117); // Just Gray
+$text-flow-gray: #32435c; // Text flow Gray
+$midnight: #001432; // Text flow Gray
+$betty-black: rgb(0, 0, 0); // Betty Black
+$logo-blue-dark: rgb(30, 48, 86); // Logo Blue dark
+$sky-blue-dark: #33578e; // Sky Blue dark
+$success-green-dark: rgb(84, 124, 13); // Success Green dark
+$orange-roughy: rgb(199, 74, 27); // Orange Roughy
+$white: rgb(255, 255, 255);
+$medium-blue: rgb(0, 45, 114);
+$dark-blue: rgb(0, 20, 50);
+$pickled-bluewood: #33435b;
+$blue-accent: #0064fe;
+$azalea: #f8d7d1;
+$rock-blue: #99abc7;
+$light-dark-red: #c36698;
+$dark-red: #b03576;
+$sky-blue-light:#647fa9;
+$blue-reduced: #35598f; // METRO Blue reduced
+$mystic: #e6eaf1;
+$Botticelli: #ccd5e3;
+$dustyGray: #999;
+$blueRibbon: #005fff;
+$selago: #e5f0fb;
+
+$success-green-light: #acd666;
+$metro-blue-tint-95: #f2f3f5;
+$metro-blue-tint-20: #33578e;
+$grey-tint-80: #ccd0d6;
+$grey-tint-90: #e6e8eb;
+$grey: #001333;
+$blue-gray: rgb(102, 114, 132);
+$transparent-gray: #e6f0ff;
+$malibu: #66a2fe;
+
+//-------- Header ---------------
+
+$header-shadow: rgba($betty-black, 0.24);
+$header-color: $metro-blue;
+$header-height: 80px;
+$header-bg: $white;
+
+$active-link: $metro-blue;
+$logo-bg: $metro-blue;
+$logo-border: rgba($sky-blue-reduced, 0.5);
+
+//-------- Fonts -----------------
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 500;
+$font-bold: 700;
+
+//-------- Sidebar ---------------
+$sidebar-bg: $metro-blue;
+$sidebar-width: 80px;
+$sidebar-width-expanded: 240px;
+$sidebar-icons-height:28px;
+$sidebar-icons-width:28px;
+$sidebar-bg-highlighted:#00245b;
+
+//-------Import-------------------
+$file-selector-border: $outline-gray;
+$file-selector-placeholder: $sky-blue;
+$status-table-color: $text-flow-gray;
+$status-table-border-color: $grey-tint-80;
+$status-table-row-color: $white;
+$status-table-header-color: $metro-blue-tint-95;
+
+
+//--------Buttons------------------
+$btn-height: 48px;
+$btn-bg: $success-green;
+$btn-color: $white;
+$btn-hover-bg: $success-green-light;
+$btn-active-bg: $success-green-dark;
+$btn-disabled-bg: $outline-gray;
+
+//--------Widget------------------
+$widget-bg: $white;
+$widget-shadow: rgba($betty-black, 0.17);
+$widget-header-color: $metro-blue;
+
+$chart-axis-label-color: $sky-blue-dark;
+$chart-axis-line: $outline-gray;
+$chart-grid-line: $light-gray;
+
+//--------Tooltip-----------------
+$tooltip-bg: $white;
+$tooltip-shadow: rgba($betty-black, 0.17);
+$tooltip-border: $outline-gray;
+$tooltip-heading-color: $sky-blue-dark;
+$tooltip-color: $text-flow-gray;
+$tooltip-segment-border: $light-gray;
+$tooltip-column-header-color: $medium-gray;
+
+//---------Legend------------------
+$legend-color: $metro-blue-reduced;
+$legend-stroke-color: $just-gray;
+
+//---------Competitive PI-----------
+$competitive-pi-color: $sky-blue-dark;
+$competitive-pi-border: $light-gray;
+
+//---------Alerts-----------
+$stat-color: $logo-blue-dark;
+$stat-count-color: $text-flow-gray;
+$stat-hover-color: $sky-blue;
+$stat-border: $light-gray;
+
+//---------Insights-----------
+$insights-export-color: $sky-blue;
+
+//---------Filters-----------
+$filters-height: 70px;
+$filters-bg: $white;
+$filters-applied-label: $metro-blue-tint-20;
+$filter-shadow: $sky-blue-bg-new;
+$filter-tab-border: $grey-tint-90;
+$filter-tab-bg: $background-gray;
+$filter-tab-active-bg: $white;
+$filter-selection-color: $sky-blue;
+$filter-toggle-color: $sky-blue;
+$filter-flyout-shadow: rgba($betty-black, 0.1);
+$filter-group-border: $light-gray;
+$filter-pill-bg: $sky-blue-bg-new;
+$filter-pill-color: $sky-blue-dark;
+$filter-pill-border: transparent;
+$filter-pill-changed-border: $sky-blue-dark;
+$filter-reset-color: $sky-blue;
+$filter-tab-color: $metro-blue;
+
+//--------Article Details--------
+$article-details-color: $text-flow-gray;
+$article-details-bg: $white;
+$article-details-header-bg: $white;
+$article-details-strips-bg-light: $white;
+$article-details-strips-bg-dark: $metro-blue-tint-95;
+$article-details-border: $outline-gray;
+$article-details-heading-color: $sky-blue-dark;
+$article-details-filter-cell-border: $outline-gray;
+$article-details-column-header-border: $light-gray;
+$article-details-sub-header-border: $outline-gray;
+$box-shadow: rgba(3, 22, 51, 0.2);
+
+//--------Article Map--------
+$article-map-zoom-btn-border: $sky-blue;
+$article-map-color: $sky-blue;
+
+//-------- Common ----------------
+$body-bg: $mother-of-all-bg;
+$body-bottom-padding: 50px;
+$heading-color: $metro-blue;
+$page-header-height: ($header-height + $filters-height);
+$gutter: 32px;

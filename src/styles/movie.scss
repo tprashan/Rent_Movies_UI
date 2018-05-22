@@ -1,0 +1,35 @@
+@import "./variables";
+
+.moviebox {
+  height: 200px;
+  width: 150px;
+  margin-top: 20px;
+  margin-left: 10px;
+  border-radius: 15px;
+  border: 1px solid #f0f0f0;
+  font-size: 15px;
+  box-shadow: 0px 0px 5px #222;
+  display: inline-flex;
+}
+
+.corner-ribbon{
+  width: 90px;
+  background: #e43;
+  position: absolute;
+  text-align: center;
+  line-height: 25px;
+  color: #f0f0f0;
+  margin-top: 160px;
+  margin-left: 60px;
+}
+
+.movie-title {
+  margin : 20px 20px 0 20px;
+  text-align: center;
+  color: orangered;
+}
+
+.movie-image {
+  height: 100px;
+  width: 150px;
+}
