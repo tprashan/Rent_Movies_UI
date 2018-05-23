@@ -3,10 +3,10 @@ import {
     getMovieListUrl,
 } from './urlHelper';
 
-const fetchKviStatusCard = () => ajax.get(getMovieListUrl()).then((res) => {
+const fetchMovies = () => ajax.get(getMovieListUrl()).then((res) => {
     return res.data;
 });
 
 export {
-    fetchKviStatusCard
+    fetchMovies
 };

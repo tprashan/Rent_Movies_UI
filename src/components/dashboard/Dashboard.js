@@ -5,14 +5,19 @@ import "../../styles/app.scss";
 import 'react-select/dist/react-select.css';
 import {RadioButton, RadioGroup} from "react-radio-buttons";
 import ListRow from "../movie/TableRow";
+import PropTypes from "prop-types";
 
 export default class Dashboard extends Component{
-    state = {
-        movies: this.props.movies,
-        genre: "All",
-        year: "All",
-        view: "Grid"
-    };
+
+    constructor(props) {
+        super();
+        this.state = {
+            movies: props.movies,
+            genre: "All",
+            year: "All",
+            view: "Grid"
+        };
+    }
 
     handleGenre = (genre) => {
         this.setState({ genre: genre.label });
@@ -32,7 +37,7 @@ export default class Dashboard extends Component{
             {value:"action",label:"Action"}, {value:"children",label:"Children"},{value:"horror",label:"Horror"}];
         let dropdownYear = [{value:"all",label:"All"},{value:"1",label:"1974"},{value:"2",label:"1992"},{value:"3",label:"1994"},
             {value:"4",label:"1995"},{value:"5",label:"1996"}];
-        const { genre, year } = this.state;
+        const { genre, year, view } = this.state;
 
         return (
             <div>
@@ -65,16 +70,16 @@ export default class Dashboard extends Component{
                     />
                 </div>
                 <div className="m-rental-container">
-                    <If condition={this.state.view === "Grid"}>
+                    <If condition={view === "Grid"}>
                         {this.state.movies.map((movie) => {
-                            if(this.state.genre === "All" && this.state.year === "All"){
+                            if(genre === "All" && year === "All"){
                                 return <MovieGrid key={movie.id} details={movie}/>
                             }
-                            else if(this.state.genre !== "All" && this.state.year === "All"){
-                                if(movie.genre.split("|")[0] === this.state.genre)
+                            else if(genre !== "All" && year === "All"){
+                                if(movie.genre.split("|")[0] === genre)
                                     return <MovieGrid key={movie.id} details={movie}/>
                             }
-                            else if(this.state.genre === "All" && this.state.year !== "All"){
+                            else if(genre === "All" && year !== "All"){
                                 if(movie.year === this.state.year)
                                     return <MovieGrid key={movie.id} details={movie}/>
                             }
@@ -84,7 +89,7 @@ export default class Dashboard extends Component{
                             }
                         })}
                     </If>
-                    <If condition={this.state.view === "List"}>
+                    <If condition={view === "List"}>
                         <table>
                             <tbody>
                                 <tr>

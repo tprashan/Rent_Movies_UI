@@ -1,4 +1,15 @@
-.chart {
+.chart{
+  display: inline-flex;
+}
+
+.chart-line {
+  width: 49.9%;
+  height: 400px;
+  margin-top: 30px;
+  border-right: 1px solid  #2a9a68;
+}
+
+.chart-pie {
   display: inline-flex;
   width: 49.9%;
   height: 400px;

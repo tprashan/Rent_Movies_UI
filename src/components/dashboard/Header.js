@@ -8,7 +8,7 @@ export default class Header extends Component {
             <div>
                 <div className="header">
                     <div className="header-text">
-                        <h1>Welcome To Movie Rental</h1>
+                        <h1 style={{marginTop: "-10px"}}>Welcome To Movie Rental</h1>
                     </div>
                 </div>
                 <TabComponent/>

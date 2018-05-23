@@ -3,18 +3,21 @@ import {Tab, TabList, TabPanel, Tabs} from 'react-tabs';
 import '../styles/tab.scss';
 import Comments from "./Comments";
 import Dashboard from "./dashboard/Dashboard";
-import { fetchKviStatusCard } from '../fetchers';
+import { fetchMovies } from '../fetchers';
 import Visuals from "./Visuals";
 
 export default class TabComponent extends Component {
 
-    state = {
-        movies : null,
-        trending: null
-    };
+    constructor(props) {
+     super();
+        this.state = {
+            movies : null,
+            trending: null
+        };
+    }
 
     componentWillMount() {
-        fetchKviStatusCard().then(data => {
+        fetchMovies().then(data => {
             this.setState({movies: data});
             let trending = data.filter((movie) => {
                 return movie.trending;
@@ -26,10 +29,11 @@ export default class TabComponent extends Component {
     render() {
         let allMoviesCount = (this.state.movies)!= null ? this.state.movies.length : 0;
         let trendingMoviesCount = (this.state.trending)!= null ? this.state.trending.length : 0;
+        const {movies, trending} = this.state;
 
         return(
             <div>
-                <If condition={this.state.movies !=null}>
+                <If condition={movies !== null}>
                     <Tabs>
                         <TabList className="tablist">
                             <Tab className="tabpane"> All({allMoviesCount})</Tab>
@@ -37,10 +41,10 @@ export default class TabComponent extends Component {
                             <Tab className="tabpane"> Comments</Tab>
                             <Tab className="tabpane"> Visuals</Tab>
                         </TabList>
-                        <TabPanel><Dashboard movies={this.state.movies}/></TabPanel>
-                        <TabPanel><Dashboard movies={this.state.trending}/></TabPanel>
+                        <TabPanel><Dashboard movies={movies}/></TabPanel>
+                        <TabPanel><Dashboard movies={trending}/></TabPanel>
                         <TabPanel><Comments/></TabPanel>
-                        <TabPanel><Visuals movies={this.state.movies}/></TabPanel>
+                        <TabPanel><Visuals movies={movies}/></TabPanel>
                     </Tabs>
                 </If>
             </div>

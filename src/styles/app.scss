@@ -1,11 +1,11 @@
 .header {
-  height: 400px;
-  background: url("../assets/movierental.jpg");
+  height: 340px;
+  background: url("../assets/hqdefault.jpg");
 
   &-text {
-    color: orangered;
+    color: red;
     text-align: center;
-    line-height: 300px;
+    line-height: 70px;
     animation: blinker 3s linear infinite;
   }
 
@@ -17,7 +17,7 @@
 }
 
 .m-rental-container {
-  min-height: 400px;
+  min-height: 450px;
   margin-left: 43px;
   margin-right: 43px;
   margin-top: 15px;

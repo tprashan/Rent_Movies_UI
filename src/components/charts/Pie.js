@@ -2,13 +2,20 @@ import React, {Component} from "react";
 import PieChart from 'react-simple-pie-chart';
 import genreColor from "./genreColor";
 import ColorDetailsBoxes from "./ColorDetailsBoxes";
+import PropTypes from 'prop-types';
 
-export default class Chart extends Component {
+const propTypes = {
+    genres: PropTypes.array.isRequired,
+};
 
-    state = {
-        genres: this.props.genres,
-        slice: null
-    };
+class Pie extends Component {
+    constructor(props) {
+        super();
+        this.state = {
+            genres: props.genres,
+            slice: null
+        };
+    }
 
     componentWillMount() {
         let slices = this.state.genres.map((genre) => {
@@ -19,14 +26,15 @@ export default class Chart extends Component {
     }
 
     render() {
+        const {slice} = this.state;
 
         return (
             <div className="pie-diagram">
                 <ColorDetailsBoxes/>
                 <div className="pie-chart">
-                    <If condition={this.state.slice !== null}>
+                    <If condition={slice !== null}>
                         <PieChart
-                            slices={this.state.slice}
+                            slices={slice}
                         />
                     </If>
                 </div>
@@ -34,3 +42,7 @@ export default class Chart extends Component {
         )
     }
 }
+
+Pie.propTypes = propTypes;
+
+export default Pie;

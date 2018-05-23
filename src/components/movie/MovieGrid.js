@@ -3,9 +3,12 @@ import "../../styles/movie.scss";
 
 export default class MovieGrid extends Component {
 
-    state = {
-        showMovieDetails: false
-    };
+    constructor(props) {
+        super();
+        this.state = {
+            showMovieDetails: false
+        };
+    }
 
     showDetailsPage = () => {
         this.setState({showMovieDetails: true});
