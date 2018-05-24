@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {Tab, TabList, TabPanel, Tabs} from 'react-tabs';
 import '../styles/tab.scss';
 import Comments from "./Comments";
-import Dashboard from "./dashboard/Dashboard";
+import Dashboard from "./dashboard/DashboardContainer";
 import { fetchMovies } from '../fetchers';
 import Visuals from "./Visuals";
 

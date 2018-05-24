@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {Route, Switch,} from 'react-router-dom';
 import Header from "./components/dashboard/Header";
-import { LoadableMovieList }  from "./components/LoadComponents";
-
 
 class App extends Component {
     render() {

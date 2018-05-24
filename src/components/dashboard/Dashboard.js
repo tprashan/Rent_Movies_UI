@@ -5,26 +5,23 @@ import "../../styles/app.scss";
 import 'react-select/dist/react-select.css';
 import {RadioButton, RadioGroup} from "react-radio-buttons";
 import ListRow from "../movie/TableRow";
-import PropTypes from "prop-types";
 
-export default class Dashboard extends Component{
+export class Dashboard extends Component{
 
     constructor(props) {
         super();
         this.state = {
             movies: props.movies,
-            genre: "All",
-            year: "All",
             view: "Grid"
         };
     }
 
-    handleGenre = (genre) => {
-        this.setState({ genre: genre.label });
+    handleGenre = (evt) => {
+        this.props.updateGenre(evt.value);
     };
 
-    handleYear = (year) => {
-        this.setState({ year: year.label });
+    handleYear = (evt) => {
+        this.props.updateYear(evt.value);
     };
 
     onChange = (value) => {
@@ -32,12 +29,13 @@ export default class Dashboard extends Component{
     };
 
     render() {
-        let dropdownGenre = [{value:"all",label:"All"},{value: "comedy", label:"Comedy"},{value:"documentary",label:"Documentary"},
-            {value:"drama",label:"Drama"},{value:"crime",label:"Crime"},{value:"adventure",label:"Adventure"},
-            {value:"action",label:"Action"}, {value:"children",label:"Children"},{value:"horror",label:"Horror"}];
-        let dropdownYear = [{value:"all",label:"All"},{value:"1",label:"1974"},{value:"2",label:"1992"},{value:"3",label:"1994"},
-            {value:"4",label:"1995"},{value:"5",label:"1996"}];
-        const { genre, year, view } = this.state;
+        let dropdownGenre = [{value:"All",label:"All"},{value: "Comedy", label:"Comedy"},{value:"Documentary",label:"Documentary"},
+            {value:"Drama",label:"Drama"},{value:"Crime",label:"Crime"},{value:"Adventure",label:"Adventure"},
+            {value:"Action",label:"Action"}, {value:"Children",label:"Children"},{value:"Horror",label:"Horror"}];
+        let dropdownYear = [{value:"All",label:"All"},{value:"1974",label:"1974"},{value:"1992",label:"1992"},
+            {value:"1994",label:"1994"}, {value:"1995",label:"1995"},{value:"1996",label:"1996"}];
+        const { view } = this.state;
+        const { genre, year } = this.props;
 
         return (
             <div>
@@ -80,11 +78,11 @@ export default class Dashboard extends Component{
                                     return <MovieGrid key={movie.id} details={movie}/>
                             }
                             else if(genre === "All" && year !== "All"){
-                                if(movie.year === this.state.year)
+                                if(movie.year === year)
                                     return <MovieGrid key={movie.id} details={movie}/>
                             }
                             else {
-                                if(movie.genre.split("|")[0] === this.state.genre && movie.year === this.state.year)
+                                if(movie.genre.split("|")[0] === genre && movie.year === year)
                                     return <MovieGrid key={movie.id} details={movie}/>
                             }
                         })}
@@ -98,19 +96,19 @@ export default class Dashboard extends Component{
                                     <th>Year</th>
                                 </tr>
                                 {this.state.movies.map((movie) => {
-                                    if(this.state.genre === "All" && this.state.year === "All"){
+                                    if(genre === "All" && year === "All"){
                                         return <ListRow key={movie.id} details={movie}/>
                                     }
-                                    else if(this.state.genre !== "All" && this.state.year === "All"){
-                                        if(movie.genre.split("|")[0] === this.state.genre)
+                                    else if(genre !== "All" && year === "All"){
+                                        if(movie.genre.split("|")[0] === genre)
                                             return <ListRow key={movie.id} details={movie}/>
                                     }
-                                    else if(this.state.genre === "All" && this.state.year !== "All"){
-                                        if(movie.year === this.state.year)
+                                    else if(genre === "All" && year !== "All"){
+                                        if(movie.year === year)
                                             return <ListRow key={movie.id} details={movie}/>
                                     }
                                     else {
-                                        if(movie.genre.split("|")[0] === this.state.genre && movie.year === this.state.year)
+                                        if(movie.genre.split("|")[0] === genre && movie.year === year)
                                             return <ListRow key={movie.id} details={movie}/>
                                     }
                                 })}
