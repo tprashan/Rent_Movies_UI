@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import '../../styles/app.scss';
-import TabComponent from "../TabComponent";
+import TabComponent from "../Tabs/TabComponentContainer";
 
 export default class Header extends Component {
     render() {

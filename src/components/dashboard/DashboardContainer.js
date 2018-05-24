@@ -8,8 +8,8 @@ export const mapStateToProps = (state) => {
 };
 
 export const mapDispatchToProps = (dispatch) => ({
-    "updateGenre": (genre) => dispatch(updateGenre(genre)),
-    "updateYear": (year) => dispatch(updateYear(year))
+    updateGenre: (genre) => dispatch(updateGenre(genre)),
+    updateYear: (year) => dispatch(updateYear(year)),
 });
 
 export default connect(

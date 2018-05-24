@@ -1,35 +1,21 @@
 import React, {Component} from "react";
 import {Tab, TabList, TabPanel, Tabs} from 'react-tabs';
-import '../styles/tab.scss';
-import Comments from "./Comments";
-import Dashboard from "./dashboard/DashboardContainer";
-import { fetchMovies } from '../fetchers';
-import Visuals from "./Visuals";
+import '../../styles/tab.scss';
+import Comments from "../Comments";
+import Dashboard from "../dashboard/DashboardContainer";
+import Visuals from "../Visuals";
 
-export default class TabComponent extends Component {
-
-    constructor(props) {
-     super();
-        this.state = {
-            movies : null,
-            trending: null
-        };
-    }
+export class TabComponent extends Component {
 
     componentWillMount() {
-        fetchMovies().then(data => {
-            this.setState({movies: data});
-            let trending = data.filter((movie) => {
-                return movie.trending;
-            });
-            this.setState({trending: trending});
-        })
+        this.props.actions.fetchAllMovies();
+        this.props.actions.fetchMoviesInTrends();
     }
 
     render() {
-        let allMoviesCount = (this.state.movies)!= null ? this.state.movies.length : 0;
-        let trendingMoviesCount = (this.state.trending)!= null ? this.state.trending.length : 0;
-        const {movies, trending} = this.state;
+        const {movies, trending} = this.props;
+        let allMoviesCount = (movies)!= null ? movies.length : 0;
+        let trendingMoviesCount = (trending)!= null ? trending.length : 0;
 
         return(
             <div>
