@@ -4,8 +4,15 @@ import '../../styles/tab.scss';
 import Comments from "../Comments";
 import Dashboard from "../dashboard/DashboardContainer";
 import Visuals from "../Visuals";
+import PropTypes from "prop-types";
 
 export class TabComponent extends Component {
+
+    static propTypes = {
+        movies: PropTypes.array,
+        trending: PropTypes.array,
+        actions: PropTypes.object,
+    };
 
     componentWillMount() {
         this.props.actions.fetchAllMovies();
@@ -22,7 +29,7 @@ export class TabComponent extends Component {
                 <If condition={movies !== null}>
                     <Tabs>
                         <TabList className="tablist">
-                            <Tab className="tabpane"> All({allMoviesCount})</Tab>
+                            <Tab className="tabpane "> All({allMoviesCount})</Tab>
                             <Tab className="tabpane"> Trending({trendingMoviesCount})</Tab>
                             <Tab className="tabpane"> Comments</Tab>
                             <Tab className="tabpane"> Visuals</Tab>

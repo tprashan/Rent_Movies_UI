@@ -11,7 +11,6 @@ export class Dashboard extends Component{
     constructor(props) {
         super();
         this.state = {
-            movies: props.movies,
             view: "Grid"
         };
     }
@@ -35,7 +34,7 @@ export class Dashboard extends Component{
         let dropdownYear = [{value:"All",label:"All"},{value:"1974",label:"1974"},{value:"1992",label:"1992"},
             {value:"1994",label:"1994"}, {value:"1995",label:"1995"},{value:"1996",label:"1996"}];
         const { view } = this.state;
-        const { genre, year } = this.props;
+        const { genre, year, movies } = this.props;
 
         return (
             <div>
@@ -69,7 +68,7 @@ export class Dashboard extends Component{
                 </div>
                 <div className="m-rental-container">
                     <If condition={view === "Grid"}>
-                        {this.state.movies.map((movie) => {
+                        {movies.map((movie) => {
                             if(genre === "All" && year === "All"){
                                 return <MovieGrid key={movie.id} details={movie}/>
                             }
@@ -95,7 +94,7 @@ export class Dashboard extends Component{
                                     <th>Genre</th>
                                     <th>Year</th>
                                 </tr>
-                                {this.state.movies.map((movie) => {
+                                {movies.map((movie) => {
                                     if(genre === "All" && year === "All"){
                                         return <ListRow key={movie.id} details={movie}/>
                                     }

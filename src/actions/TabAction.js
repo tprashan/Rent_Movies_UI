@@ -13,7 +13,6 @@ export const fetchAllMovies = () => {
 };
 
 export const fetchMoviesInTrends = () => {
-    console.log("here");
     return (dispatch) => {
         fetchTrendingMovies().then((trendingMovies) => {
             dispatch({
