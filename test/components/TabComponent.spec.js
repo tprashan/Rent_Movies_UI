@@ -32,5 +32,4 @@ describe('<TabComponent/>', () => {
         expect(all).toEqual(' All(');
         expect(comment).toEqual(' Comments');
     });
-
 });
