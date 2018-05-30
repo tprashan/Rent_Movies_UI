@@ -7,7 +7,7 @@ import {
     applyMiddleware, compose
 } from "redux";
 
-import reducer from './reducers/rootReducer';
+import reducer from './reducers/RootReducer';
 
 const enhancer = compose(
     applyMiddleware(thunk),

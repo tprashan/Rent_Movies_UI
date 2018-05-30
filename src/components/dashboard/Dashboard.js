@@ -6,6 +6,8 @@ import 'react-select/dist/react-select.css';
 import {RadioButton, RadioGroup} from "react-radio-buttons";
 import ListRow from "../movie/TableRow";
 import MovieDetails from "../movie/MovieDetails";
+import dropdownGenre from "../../constents/genres";
+import dropdownYear from "../../constents/yearOfMovies";
 
 export class Dashboard extends Component{
 
@@ -33,11 +35,6 @@ export class Dashboard extends Component{
     };
 
     render() {
-        let dropdownGenre = [{value:"All",label:"All"},{value: "Comedy", label:"Comedy"},{value:"Documentary",label:"Documentary"},
-            {value:"Drama",label:"Drama"},{value:"Crime",label:"Crime"},{value:"Adventure",label:"Adventure"},
-            {value:"Action",label:"Action"}, {value:"Children",label:"Children"},{value:"Horror",label:"Horror"}];
-        let dropdownYear = [{value:"All",label:"All"},{value:"1974",label:"1974"},{value:"1992",label:"1992"},
-            {value:"1994",label:"1994"}, {value:"1995",label:"1995"},{value:"1996",label:"1996"}];
         const { view } = this.state;
         const { genre, year, movies, showDetailPage, movieDescriptions, changeDashboard, setDescription} = this.props;
 
