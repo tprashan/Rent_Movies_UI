@@ -4,7 +4,7 @@ import MovieGrid from "../movie/MovieGrid";
 import "../../styles/app.scss";
 import 'react-select/dist/react-select.css';
 import {RadioButton, RadioGroup} from "react-radio-buttons";
-import ListRow from "../movie/TableRow";
+import Row from "../movie/TableRow";
 import MovieDetails from "../movie/MovieDetails";
 import dropdownGenre from "../../constents/genres";
 import dropdownYear from "../../constents/yearOfMovies";
@@ -73,19 +73,31 @@ export class Dashboard extends Component{
                         <If condition={view === "Grid"}>
                             {movies.map((movie) => {
                                 if(genre === "All" && year === "All"){
-                                    return <MovieGrid key={movie.id} details={movie} showDetail={changeDashboard} des={setDescription}/>
+                                    return <MovieGrid key={movie.id}
+                                                      details={movie}
+                                                      showDetail={changeDashboard}
+                                                      des={setDescription}/>
                                 }
                                 else if(genre !== "All" && year === "All"){
                                     if(movie.genre.split("|")[0] === genre)
-                                        return <MovieGrid key={movie.id} details={movie} showDetail={changeDashboard} des={setDescription}/>
+                                        return <MovieGrid key={movie.id}
+                                                          details={movie}
+                                                          showDetail={changeDashboard}
+                                                          des={setDescription}/>
                                 }
                                 else if(genre === "All" && year !== "All"){
                                     if(movie.year === year)
-                                        return <MovieGrid key={movie.id} details={movie} showDetail={changeDashboard} des={setDescription}/>
+                                        return <MovieGrid key={movie.id}
+                                                          details={movie}
+                                                          showDetail={changeDashboard}
+                                                          des={setDescription}/>
                                 }
                                 else {
                                     if(movie.genre.split("|")[0] === genre && movie.year === year)
-                                        return <MovieGrid key={movie.id} details={movie} showDetail={changeDashboard} des={setDescription}/>
+                                        return <MovieGrid key={movie.id}
+                                                          details={movie}
+                                                          showDetail={changeDashboard}
+                                                          des={setDescription}/>
                                 }
                             })}
                         </If>
@@ -99,19 +111,19 @@ export class Dashboard extends Component{
                                 </tr>
                                 {movies.map((movie) => {
                                     if(genre === "All" && year === "All"){
-                                        return <ListRow key={movie.id} details={movie}/>
+                                        return <Row key={movie.id} details={movie}/>
                                     }
                                     else if(genre !== "All" && year === "All"){
                                         if(movie.genre.split("|")[0] === genre)
-                                            return <ListRow key={movie.id} details={movie}/>
+                                            return <Row key={movie.id} details={movie}/>
                                     }
                                     else if(genre === "All" && year !== "All"){
                                         if(movie.year === year)
-                                            return <ListRow key={movie.id} details={movie}/>
+                                            return <Row key={movie.id} details={movie}/>
                                     }
                                     else {
                                         if(movie.genre.split("|")[0] === genre && movie.year === year)
-                                            return <ListRow key={movie.id} details={movie}/>
+                                            return <Row key={movie.id} details={movie}/>
                                     }
                                 })}
                                 </tbody>

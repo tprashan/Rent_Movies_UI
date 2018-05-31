@@ -5,7 +5,8 @@ import {Dashboard} from "../../src/components/dashboard/Dashboard";
 describe('<Dashboard/>', () => {
     const props = {
         movies: [{title: "abc", year: "1995", trending:true, genre: "Action"},
-            {title: "abcd", year: "1994", trending:false, genre: "Drama"}]
+            {title: "abcd", year: "1994", trending:false, genre: "Drama"}],
+        changeDashboard: jest.fn()
     };
 
     it('should present the movie dropdowns div', () => {
