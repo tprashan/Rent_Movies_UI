@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import {Dashboard} from "./Dashboard";
+import Dashboard from "./Dashboard";
 import {changeDashboard, setDescriptionOfMovie, updateGenre, updateYear} from "../../actions/DashboardAction";
 
 

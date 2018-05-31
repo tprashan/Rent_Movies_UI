@@ -1,7 +1,14 @@
 import React, {Component} from "react";
 import "../../styles/movie.scss";
+import PropTypes from "prop-types";
 
 export default class MovieGrid extends Component {
+
+    static propTypes = {
+        details: PropTypes.object.isRequired,
+        showDetail: PropTypes.func.isRequired,
+        des: PropTypes.func.isRequired,
+    };
 
     showDetailsPage = (url) => {
         this.props.showDetail(true);

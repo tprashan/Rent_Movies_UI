@@ -4,7 +4,9 @@ import MovieGrid from "../../src/components/movie/MovieGrid";
 
 describe('<MovieGrid/>', () => {
     const props = {
-        details: {title: "abc", year: "1995", genre: "Action",trending:true}
+        details: {title: "abc", year: "1995", genre: "Action",trending:true},
+        showDetail: jest.fn(),
+        des: jest.fn(),
     };
 
     it('should present the moviebox', () => {

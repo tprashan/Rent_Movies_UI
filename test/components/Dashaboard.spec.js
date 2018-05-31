@@ -1,12 +1,19 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import {Dashboard} from "../../src/components/dashboard/Dashboard";
+import Dashboard from "../../src/components/dashboard/Dashboard";
 
 describe('<Dashboard/>', () => {
     const props = {
         movies: [{title: "abc", year: "1995", trending:true, genre: "Action"},
             {title: "abcd", year: "1994", trending:false, genre: "Drama"}],
-        changeDashboard: jest.fn()
+        genre: "Drama",
+        year: "1995",
+        movieDescriptions: "",
+        showDetailPage: false,
+        updateGenre: jest.fn(),
+        updateYear: jest.fn(),
+        changeDashboard: jest.fn(),
+        setDescription: jest.fn(),
     };
 
     it('should present the movie dropdowns div', () => {

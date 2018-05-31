@@ -8,8 +8,21 @@ import Row from "../movie/TableRow";
 import MovieDetails from "../movie/MovieDetails";
 import dropdownGenre from "../../constents/genres";
 import dropdownYear from "../../constents/yearOfMovies";
+import PropTypes from "prop-types";
 
-export class Dashboard extends Component{
+const propTypes = {
+    genre: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+    movies: PropTypes.array.isRequired,
+    showDetailPage: PropTypes.bool.isRequired,
+    movieDescriptions: PropTypes.string,
+    updateGenre: PropTypes.func.isRequired,
+    updateYear: PropTypes.func.isRequired,
+    changeDashboard: PropTypes.func.isRequired,
+    setDescription: PropTypes.func.isRequired,
+};
+
+class Dashboard extends Component{
 
     constructor(props) {
         super();
@@ -140,3 +153,7 @@ export class Dashboard extends Component{
         )
     };
 }
+
+Dashboard.propTypes = propTypes;
+
+export default Dashboard;
