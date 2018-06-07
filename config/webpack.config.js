@@ -30,6 +30,7 @@ const devConfig = {
                     {
                         loader: 'postcss-loader',
                         options: {
+                            sourceMap: true,
                             plugins: [
                                 autoprefixer({ browsers: ['ie 11', 'ff 45', 'last 2 versions'] })
                             ],

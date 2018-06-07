@@ -1,0 +1,16 @@
+version : '2.1'
+
+services:
+
+  rent_movies_ui:
+      container_name: rent_movies_ui
+      image: rent_movies_ui
+      build:
+        context: .
+        dockerfile: movie-rental.dockerfile
+      volumes:
+          - .:/var/www/rent_movies_ui
+      environment:
+        - NODE_ENV=dev-local
+      ports:
+        - 3000:3000
