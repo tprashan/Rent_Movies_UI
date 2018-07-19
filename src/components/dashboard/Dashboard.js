@@ -9,20 +9,21 @@ import MovieDetails from "../movie/MovieDetails";
 import dropdownGenre from "../../constents/genres";
 import dropdownYear from "../../constents/yearOfMovies";
 import PropTypes from "prop-types";
+import {Link} from 'react-router-dom';
 
 const propTypes = {
     genre: PropTypes.string.isRequired,
     year: PropTypes.string.isRequired,
     movies: PropTypes.array.isRequired,
     showDetailPage: PropTypes.bool.isRequired,
-    movieDescriptions: PropTypes.string,
+    movieDescriptions: PropTypes.object,
     updateGenre: PropTypes.func.isRequired,
     updateYear: PropTypes.func.isRequired,
     changeDashboard: PropTypes.func.isRequired,
     setDescription: PropTypes.func.isRequired,
 };
 
-class Dashboard extends Component{
+class Dashboard extends Component {
 
     constructor(props) {
         super();
@@ -40,23 +41,23 @@ class Dashboard extends Component{
     };
 
     onChange = (value) => {
-        this.setState({ view: value });
+        this.setState({view: value});
     };
 
     componentWillMount = () => {
-      this.props.changeDashboard(false);
+        this.props.changeDashboard(false);
     };
 
     render() {
-        const { view } = this.state;
-        const { genre, year, movies, showDetailPage, movieDescriptions, changeDashboard, setDescription} = this.props;
+        const {view} = this.state;
+        const {genre, year, movies, showDetailPage, movieDescriptions, changeDashboard, setDescription} = this.props;
 
         return (
             <div>
                 <If condition={!showDetailPage}>
                     <div className="m-dropdown">
                         <div className="radio-buttons">
-                            <RadioGroup onChange={ this.onChange } horizontal>
+                            <RadioGroup onChange={this.onChange} horizontal>
                                 <RadioButton value="Grid">
                                     Grid
                                 </RadioButton>
@@ -85,28 +86,28 @@ class Dashboard extends Component{
                     <div className="m-rental-container">
                         <If condition={view === "Grid"}>
                             {movies.map((movie) => {
-                                if(genre === "All" && year === "All"){
+                                if (genre === "All" && year === "All") {
                                     return <MovieGrid key={movie.id}
                                                       details={movie}
                                                       showDetail={changeDashboard}
                                                       des={setDescription}/>
                                 }
-                                else if(genre !== "All" && year === "All"){
-                                    if(movie.genre.split("|")[0] === genre)
+                                else if (genre !== "All" && year === "All") {
+                                    if (movie.genre.split("|")[0] === genre)
                                         return <MovieGrid key={movie.id}
                                                           details={movie}
                                                           showDetail={changeDashboard}
                                                           des={setDescription}/>
                                 }
-                                else if(genre === "All" && year !== "All"){
-                                    if(movie.year === year)
+                                else if (genre === "All" && year !== "All") {
+                                    if (movie.year === year)
                                         return <MovieGrid key={movie.id}
                                                           details={movie}
                                                           showDetail={changeDashboard}
                                                           des={setDescription}/>
                                 }
                                 else {
-                                    if(movie.genre.split("|")[0] === genre && movie.year === year)
+                                    if (movie.genre.split("|")[0] === genre && movie.year === year)
                                         return <MovieGrid key={movie.id}
                                                           details={movie}
                                                           showDetail={changeDashboard}
@@ -123,19 +124,19 @@ class Dashboard extends Component{
                                     <th>Year</th>
                                 </tr>
                                 {movies.map((movie) => {
-                                    if(genre === "All" && year === "All"){
+                                    if (genre === "All" && year === "All") {
                                         return <Row key={movie.id} details={movie}/>
                                     }
-                                    else if(genre !== "All" && year === "All"){
-                                        if(movie.genre.split("|")[0] === genre)
+                                    else if (genre !== "All" && year === "All") {
+                                        if (movie.genre.split("|")[0] === genre)
                                             return <Row key={movie.id} details={movie}/>
                                     }
-                                    else if(genre === "All" && year !== "All"){
-                                        if(movie.year === year)
+                                    else if (genre === "All" && year !== "All") {
+                                        if (movie.year === year)
                                             return <Row key={movie.id} details={movie}/>
                                     }
                                     else {
-                                        if(movie.genre.split("|")[0] === genre && movie.year === year)
+                                        if (movie.genre.split("|")[0] === genre && movie.year === year)
                                             return <Row key={movie.id} details={movie}/>
                                     }
                                 })}
@@ -147,6 +148,11 @@ class Dashboard extends Component{
                 <If condition={showDetailPage}>
                     <div className="m-rental-container">
                         <MovieDetails movie={movieDescriptions}/>
+                        <Link to="/dummy">
+                            <button>
+                                to dummy page
+                            </button>
+                        </Link>
                     </div>
                 </If>
             </div>

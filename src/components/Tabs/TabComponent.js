@@ -1,10 +1,10 @@
 import React, {Component} from "react";
 import {Tab, TabList, TabPanel, Tabs} from 'react-tabs';
 import '../../styles/tab.scss';
-import Comments from "../Comments";
 import Dashboard from "../dashboard/DashboardContainer";
 import Visuals from "../Visuals";
 import PropTypes from "prop-types";
+import CommentsContainer from "../comments/CommentsContainer";
 
 export class TabComponent extends Component {
 
@@ -36,7 +36,7 @@ export class TabComponent extends Component {
                         </TabList>
                         <TabPanel><Dashboard movies={movies}/></TabPanel>
                         <TabPanel><Dashboard movies={trending}/></TabPanel>
-                        <TabPanel><Comments/></TabPanel>
+                        <TabPanel><CommentsContainer/></TabPanel>
                         <TabPanel><Visuals movies={movies}/></TabPanel>
                     </Tabs>
                 </If>

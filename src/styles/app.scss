@@ -26,11 +26,12 @@
 }
 
 .comment-box {
-  min-height: 100px;
+  min-height: 50px;
   margin: 15px 10px 10px 10px;
   border-radius: 5px;
+  padding-left: 10px;
+  padding-top: 10px;
   border: 1px solid lightgoldenrodyellow;
-  display: inline-flex;
 }
 
 .m-dropdown {
