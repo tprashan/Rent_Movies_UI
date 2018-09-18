@@ -1,17 +1,18 @@
 import {connect} from "react-redux";
-import Registration from "./Registration";
-import {signUpUser} from "../../actions/AuthAction";
+import Login from "./Login";
+import {loginUser} from "../../actions/AuthAction";
 import {bindActionCreators} from "redux";
 
 export const mapStateToProps = (state) => {
-    return Object.assign({}, state.registrationReducer)
+    return Object.assign({}, state.loginReducer)
 };
 
-export const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch, props) => {
+    console.log(props,"props")
     return {
         actions: bindActionCreators(
             {
-                signUpUser
+                loginUser
             }
             , dispatch
         )
@@ -21,4 +22,4 @@ export const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Registration);
+)(Login);
